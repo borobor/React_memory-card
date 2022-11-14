@@ -1,14 +1,47 @@
-.cards-container {
-	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	grid-template-rows: repeat(2, 1fr);
+:root {
+	--border-radius: 10px;
 }
 
-.cards-container img {
-	width: 150px;
-	height: 150px;
+*, *::before, *::after {
+	margin: 0;
+	box-sizing: border-box;
 }
 
-.card p {
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+	background: lightblue;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 95vw;
+	padding: 10px;
+	margin: 10px;
+	border: 1px solid black;
+	border-radius: var(--border-radius);
+}
+
+.header-logo {
+	display: flex;
+	align-items: center;
+}
+
+.header-logo img {
+	width: 200px;
+	height: auto;
+}
+
+.header-score {
 	text-align: center;
+}
+
+main {
+	display: flex;
+	flex: 1;
+	align-items: center;
 }

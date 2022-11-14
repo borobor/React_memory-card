@@ -1,3 +1,6 @@
+import React from "react";
+import "./Cards.css";
+
 const Cards = (props) => {
 
 	const { cards, handleClick } = props;
