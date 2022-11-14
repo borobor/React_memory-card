@@ -1,0 +1,14 @@
+.cards-container {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+}
+
+.cards-container img {
+	width: 150px;
+	height: 150px;
+}
+
+.card p {
+	text-align: center;
+}
