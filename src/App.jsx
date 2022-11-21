@@ -40,24 +40,13 @@ function App() {
 
 	const gameOver = () => {
 		setIsGameOver(true);
-		checkHighScore(clickedCards.length);
-		setClickedCards([]);
-	}
-
-	const checkHighScore = (value) => {
-		if (value > highScore) {
-			setHighScore(value);
-		}
-		return;
 	}
 	
   useEffect(() => {
 		shuffleCards();
 
-		if (clickedCards.length == cardSet.length) {
-			alert("You Won!!");
-			checkHighScore(clickedCards.length);
-			setClickedCards([]);
+		if (clickedCards.length === 10) {
+			gameOver();
 		}
   }, [clickedCards]);
 
@@ -75,7 +64,12 @@ function App() {
 			</header>
       <main>
 				{isGameOver ?
-					<GameOverModal setClickedCards={setClickedCards} setIsGameOver={setIsGameOver}/> :
+					<GameOverModal
+						clickedCards={clickedCards}
+						setClickedCards={setClickedCards}
+						highScore={highScore}
+						setHighScore={setHighScore}
+						setIsGameOver={setIsGameOver}/> :
 					<Cards handleClick={handleClick} cards={cards} />}		
 			</main>
     </div>

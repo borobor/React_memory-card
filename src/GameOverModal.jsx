@@ -3,9 +3,10 @@ import './GameOverModal.css'
 
 export const GameOverModal = (props) => {
 
-  const {setClickedCards, setIsGameOver} = props;
+  const { clickedCards, setClickedCards, setIsGameOver, highScore, setHighScore } = props;  
 
   const handleClick = () => {
+    setHighScore(clickedCards.length);
     setClickedCards([]);
     setIsGameOver(false);
   }
@@ -13,7 +14,19 @@ export const GameOverModal = (props) => {
   return (
     <div className="modal">
       <div className="modal-content">
-        <p>Game over!</p>
+        {(clickedCards.length === 10) ?
+          <p>Congrats! You've won</p> 
+          :
+          <>
+            {(clickedCards.length > highScore) ?
+              <>
+                <p>Nice! New high score: {clickedCards.length}</p>
+              </> 
+              :
+              <p>Game over!</p>
+            } 
+          </>
+        } 
         <button onClick={handleClick}>Restart</button>
       </div>
     </div>
