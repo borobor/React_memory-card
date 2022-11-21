@@ -1,11 +1,11 @@
 .cards-container {
 	display: grid;
-	grid-template-columns: repeat(5, 120px);
+	grid-template-columns: repeat(5, 180px);
 	grid-template-rows: repeat(2, 1fr);
 	padding: 20px;
 	border: 1px solid black;
 	border-radius: var(--border-radius);
-
+	backdrop-filter: blur(5px);
 }
 
 .card {

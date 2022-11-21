@@ -3,16 +3,16 @@ import Cards from "./Cards";
 import "./App.css";
 
 const cardSet = [
-  { src: "./src/assets/card1.png", text: "Finn the Human", id: 1 },
-  { src: "./src/assets/card2.png", text: "Jake the Dog", id: 2 },
-  { src: "./src/assets/card3.png", text: "Princess Bublegum", id: 3 },
-  { src: "./src/assets/card4.png", text: "BMO", id: 4 },
-  { src: "./src/assets/card5.png", text: "Ice King", id: 5 },
-  { src: "./src/assets/card6.png", text: "Lumpy Space Princess", id: 6 },
-  { src: "./src/assets/card7.png", text: "Earl of Lemongrab", id: 7 },
-  { src: "./src/assets/card8.png", text: "Marceline the Vampire Queen", id: 8 },
-  { src: "./src/assets/card9.png", text: "Peppermint Butler", id: 9 },
-  { src: "./src/assets/card10.png", text: "Gunter", id: 10 },
+  { src: "./src/assets/img/card1.png", text: "Finn the Human", id: 1 },
+  { src: "./src/assets/img/card2.png", text: "Jake the Dog", id: 2 },
+  { src: "./src/assets/img/card3.png", text: "Princess Bublegum", id: 3 },
+  { src: "./src/assets/img/card4.png", text: "BMO", id: 4 },
+  { src: "./src/assets/img/card5.png", text: "Ice King", id: 5 },
+  { src: "./src/assets/img/card6.png", text: "Lumpy Space Princess", id: 6 },
+  { src: "./src/assets/img/card7.png", text: "Earl of Lemongrab", id: 7 },
+  { src: "./src/assets/img/card8.png", text: "Marceline the Vampire Queen", id: 8 },
+  { src: "./src/assets/img/card9.png", text: "Peppermint Butler", id: 9 },
+  { src: "./src/assets/img/card10.png", text: "Gunter", id: 10 },
 ];
 
 function App() {
@@ -63,12 +63,12 @@ function App() {
     <div className="content">
       <header>
 				<div className="header-logo">
-					<img src="./src/assets/game-logo.png" alt="Adventure Time logo" />
+					<img src="./src/assets/img/game-logo.png" alt="Adventure Time logo" />
 					<p>Memory game</p>
 				</div>
 				<div className="header-score">
-					<p>Current score: {clickedCards.length}</p>
 					<p>High score: {highScore}</p>
+					<p>Current score: {clickedCards.length}</p>
 				</div>
 			</header>
       <main>

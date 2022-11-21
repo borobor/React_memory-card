@@ -7,12 +7,19 @@
 	box-sizing: border-box;
 }
 
+@font-face {
+	font-family: 'PressStart';
+	src: url(./assets/font/PressStart2P-Regular.ttf);
+}
+
 .content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	height: 100vh;
-	background: lightblue;
+	background: url(./assets/img/bg-image.webp);
+	background-size: cover;
+	font-family: 'PressStart', Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -20,24 +27,27 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	width: 95vw;
-	padding: 10px;
+	padding: 1rem;
 	margin: 10px;
 	border: 1px solid black;
 	border-radius: var(--border-radius);
+	backdrop-filter: blur(5px);
 }
 
 .header-logo {
-	display: flex;
-	align-items: center;
+	text-align: center;
 }
 
 .header-logo img {
-	width: 200px;
+	width: 12rem;
 	height: auto;
 }
 
 .header-score {
-	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 2rem;
 }
 
 main {
