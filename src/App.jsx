@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { GameOverModal } from "./GameOverModal";
 import Cards from "./Cards";
 import "./App.css";
 
@@ -19,6 +20,7 @@ function App() {
   const [cards, setCards] = useState([]);
   const [clickedCards, setClickedCards] = useState([]);
 	const [highScore, setHighScore] = useState(0);
+	const [isGameOver, setIsGameOver] = useState(false);
 
 	const shuffleCards = () => {
 		const shuffledCards = [...cardSet]
@@ -37,7 +39,7 @@ function App() {
   }
 
 	const gameOver = () => {
-		alert("Game over!");
+		setIsGameOver(true);
 		checkHighScore(clickedCards.length);
 		setClickedCards([]);
 	}
@@ -72,7 +74,9 @@ function App() {
 				</div>
 			</header>
       <main>
-				<Cards handleClick={handleClick} cards={cards} />
+				{isGameOver ?
+					<GameOverModal setClickedCards={setClickedCards} setIsGameOver={setIsGameOver}/> :
+					<Cards handleClick={handleClick} cards={cards} />}		
 			</main>
     </div>
   );
